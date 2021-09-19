@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:app="clr-namespace:FormulaRendererApp"
+             mc:Ignorable="d"
+             x:Class="FormulaRendererApp.Views.ImageDisplayPage"
+             Title="{x:Static app:Resources.Title}"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             NavigationPage.HasNavigationBar="true"
+             >
+    <StackLayout
+        Padding="50, 50, 50, 30"
+        >
+        <Label 
+            VerticalOptions="Fill"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="{x:Static app:Resources.SuccessfulRender}" />
+
+        <Image
+            Margin="0, 25, 0, 25"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            Source="{Binding ImageSource, Mode=OneWay }"
+            />
+
+        <StackLayout
+            VerticalOptions="End">
+        <Button
+            Style="{StaticResource ButtonStyle}"
+            Command="{Binding ShareCommand}"
+            Text="Share"
+            />
+        <Button
+            Style="{StaticResource ButtonStyle}"
+            Command="{Binding StoreCommand}"
+            Text="Store on disk"
+            />
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

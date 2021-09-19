@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:app="clr-namespace:FormulaRendererApp"
+             mc:Ignorable="d"
+             x:Class="FormulaRendererApp.Views.FormulaPage"
+             Title="{x:Static app:Resources.Title}"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             NavigationPage.HasNavigationBar="true"
+             >
+
+    <AbsoluteLayout>
+        <Editor  
+            x:Name="Formula"
+            AbsoluteLayout.LayoutBounds=".5,.5,.8,.3" 
+            AbsoluteLayout.LayoutFlags="All"
+            Placeholder="Enter your tex formula here."
+            Text="{Binding Formula, Mode=OneWayToSource }"
+           
+        />
+        <Button
+            x:Name="Render"
+            AbsoluteLayout.LayoutBounds=".5, 0.9, .6, 50" 
+            AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+            Style="{StaticResource ButtonStyle}"
+            Text="Render"
+            Command="{Binding RenderCommand}"
+        />
+    </AbsoluteLayout>
+
+</ContentPage>

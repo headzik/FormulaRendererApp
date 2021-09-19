@@ -1,0 +1,10 @@
+General info:
+1. As for now the app receives a png, as it was easier to implement (no external libraries to display svg etc).
+2. Received png has a transparent background, so unfortunately on the phone the formula image might not be visible (as by default the background is black in many viewing apps).
+3. App is cross platform, although it was only tested for Android. It might require a bit of modifications here and there for iOS (or not).
+
+Regarding testing, at the beginning I'd write unit tests for the smallest components. Then I would test the bigger components that use the smaller once (integration testing). Then the system as a whole. Once the logic is tested, then UI tests should be performed (they can also be automized).
+
+There are ways to mock HTTP requests in order to test handling of Http request that are hard to test otherwise (internal server error e.g.), as well as, to mock UI.
+
+Details, frameworks etc. depend on the technology (.Net, Java/Kotlin, Swift/ObjectiveC)
